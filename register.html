@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | Mil Sabores</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html"><img src="assets/img/icono.png" alt="Logo Mil Sabores"><span>Mil Sabores</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
+            <li class="nav-item"><a class="btn btn-brand btn-sm" href="carrito.html">Carrito <span class="cart-count" data-cart-count>0</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-card auth-card-wide">
+      <p class="eyebrow">Nueva cuenta</p>
+      <h1>Registro de cliente</h1>
+      <p>Crea una cuenta para guardar tus datos y realizar pedidos de forma más simple.</p>
+
+      <form id="registerForm">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="registerNombre" class="form-label">Nombre</label>
+            <input type="text" id="registerNombre" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="registerApellido" class="form-label">Apellido</label>
+            <input type="text" id="registerApellido" class="form-control" required>
+          </div>
+          <div class="col-md-12">
+            <label for="registerEmail" class="form-label">Correo electrónico</label>
+            <input type="email" id="registerEmail" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="registerPassword" class="form-label">Contraseña</label>
+            <input type="password" id="registerPassword" class="form-control" minlength="6" required>
+          </div>
+          <div class="col-md-6">
+            <label for="registerPassword2" class="form-label">Confirmar contraseña</label>
+            <input type="password" id="registerPassword2" class="form-control" minlength="6" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-brand w-100 mt-4">Crear cuenta</button>
+        <p id="registerMensaje" class="form-message"></p>
+      </form>
+
+      <p class="auth-link">¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+    </section>
+  </main>
+
+  <script src="assets/js/carrito.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
