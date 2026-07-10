@@ -4,55 +4,155 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle de producto | Mil Sabores</title>
+  <meta name="description" content="Detalle del producto seleccionado en la pastelería Mil Sabores.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand brand" href="index.html"><img src="assets/img/icono.png" alt="Logo Mil Sabores"><span>Mil Sabores</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand brand" href="index.html">
+          <img src="assets/img/icono.png" alt="Logo Mil Sabores">
+          <span>Mil Sabores</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
             <li class="nav-item"><a class="nav-link" href="login.html">Ingresar</a></li>
-            <li class="nav-item"><a class="btn btn-brand btn-sm" href="carrito.html">Carrito <span class="cart-count" data-cart-count>0</span></a></li>
+            <li class="nav-item">
+              <a class="btn btn-brand btn-sm" href="carrito.html">
+                Carrito <span class="cart-count" data-cart-count>0</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <main class="page-main">
-    <section class="section-padding">
+  <main class="page-main detail-pro-page">
+    <section class="detail-pro-section">
       <div class="container">
-        <a href="productos.html" class="back-link">← Volver al catálogo</a>
+        <nav class="breadcrumb-line" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span>/</span>
+          <a href="productos.html">Productos</a>
+          <span>/</span>
+          <strong id="breadcrumbProducto">Detalle</strong>
+        </nav>
 
-        <div id="detalleProducto" class="detail-card row g-5 align-items-center mt-3">
-          <div class="col-lg-6">
-            <img id="detalleImagen" class="detail-img" src="assets/img/icono.png" alt="Producto Mil Sabores">
-          </div>
-          <div class="col-lg-6">
-            <span id="detalleCategoria" class="product-category">Categoría</span>
+        <div id="detalleProducto" class="product-detail-shell">
+          <section class="product-gallery-panel" aria-label="Galería del producto">
+            <div class="product-main-photo-wrap">
+              <span id="detalleEtiqueta" class="detail-floating-label">Preparación artesanal</span>
+              <img id="detalleImagen" class="product-main-photo" src="assets/img/icono.png" alt="Producto Mil Sabores">
+            </div>
+
+            <div id="detalleMiniaturas" class="product-thumbs" aria-label="Miniaturas del producto"></div>
+
+            <div class="delivery-card">
+              <div>
+                <strong>Retiro o despacho</strong>
+                <span>Coordinamos la entrega después de registrar el pedido.</span>
+              </div>
+              <div>
+                <strong>Producto fresco</strong>
+                <span>Preparado para celebraciones y ocasiones especiales.</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-buy-panel" aria-label="Información de compra">
+            <div class="product-topline">
+              <span id="detalleCategoria" class="product-category">Categoría</span>
+              <span id="detalleCodigo" class="sku-badge">Código</span>
+            </div>
+
             <h1 id="detalleNombre">Nombre del producto</h1>
-            <p id="detalleDescripcion" class="detail-description">Descripción del producto.</p>
-            <p id="detalleDetalle" class="text-muted"></p>
-            <p id="detallePrecio" class="detail-price">$0</p>
 
-            <div class="quantity-box">
-              <label for="cantidadProducto" class="form-label">Cantidad</label>
-              <input type="number" id="cantidadProducto" class="form-control" min="1" value="1">
+            <div class="review-line">
+              <span class="review-stars">★★★★★</span>
+              <span>4.8 / 5 · Producto recomendado por clientes</span>
             </div>
 
-            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+            <p id="detalleDescripcion" class="detail-lead">Descripción del producto.</p>
+
+            <div class="price-panel">
+              <div>
+                <span>Precio referencial</span>
+                <strong id="detallePrecio">$0</strong>
+              </div>
+              <small>Valor por unidad. La personalización se coordina por contacto.</small>
+            </div>
+
+            <div class="purchase-options">
+              <div class="option-box">
+                <label for="opcionMensaje" class="form-label">Personalización</label>
+                <select id="opcionMensaje" class="form-select">
+                  <option value="sin-mensaje">Sin mensaje personalizado</option>
+                  <option value="con-mensaje">Agregar mensaje en la torta</option>
+                  <option value="coordinar">Coordinar diseño por contacto</option>
+                </select>
+              </div>
+
+              <div class="option-box">
+                <label for="cantidadProducto" class="form-label">Cantidad</label>
+                <div class="quantity-control quantity-control-pro">
+                  <button type="button" id="btnRestarCantidad" aria-label="Disminuir cantidad">−</button>
+                  <input type="number" id="cantidadProducto" min="1" value="1">
+                  <button type="button" id="btnSumarCantidad" aria-label="Aumentar cantidad">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-actions detail-actions-pro">
               <button id="btnAgregarDetalle" class="btn btn-brand btn-lg">Agregar al carrito</button>
-              <a href="carrito.html" class="btn btn-outline-brand btn-lg">Ver carrito</a>
+              <button id="btnComprarAhora" class="btn btn-outline-brand btn-lg">Comprar ahora</button>
             </div>
-          </div>
+
+            <div id="mensajeDetalle" class="detail-message d-none"></div>
+
+            <div class="secure-notice">
+              <span>✓ Pedido guardado en el carrito</span>
+              <span>✓ Atención personalizada</span>
+              <span>✓ Ideal para eventos</span>
+            </div>
+          </section>
         </div>
+
+        <section id="detalleExtra" class="detail-extra-grid">
+          <article class="detail-extra-card">
+            <p class="eyebrow">Descripción</p>
+            <h2>Información del producto</h2>
+            <p id="detalleDetalle">Detalle del producto.</p>
+          </article>
+
+          <article class="detail-extra-card">
+            <p class="eyebrow">Compra</p>
+            <h2>Antes de realizar tu pedido</h2>
+            <ul>
+              <li>El producto se agrega al carrito para revisar el resumen de compra.</li>
+              <li>La entrega o retiro se coordina según disponibilidad.</li>
+              <li>Las imágenes son referenciales y pueden variar según decoración.</li>
+            </ul>
+          </article>
+        </section>
 
         <div id="productoNoEncontrado" class="empty-message d-none">
           <h2>Producto no encontrado</h2>
@@ -61,12 +161,39 @@
         </div>
       </div>
     </section>
+
+    <section id="seccionRelacionados" class="section-padding bg-soft d-none">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">También podría interesarte</p>
+          <h2>Productos relacionados</h2>
+        </div>
+        <div id="productosRelacionados" class="row g-4"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container text-center">
-      <h2>Mil Sabores</h2>
-      <p class="mb-0">© 2026 Mil Sabores.</p>
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-md-6">
+          <h2>Mil Sabores</h2>
+          <p>Pastelería artesanal enfocada en productos dulces para celebraciones y momentos especiales.</p>
+        </div>
+        <div class="col-md-3">
+          <h3>Menú</h3>
+          <a href="index.html">Inicio</a>
+          <a href="productos.html">Productos</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="col-md-3">
+          <h3>Contacto</h3>
+          <p>contacto@milsabores.cl</p>
+          <p>Santiago, Chile</p>
+        </div>
+      </div>
+      <hr>
+      <p class="text-center mb-0">© 2026 Mil Sabores. Proyecto académico Fullstack II.</p>
     </div>
   </footer>
 
